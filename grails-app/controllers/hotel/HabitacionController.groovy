@@ -13,7 +13,7 @@ class HabitacionController {
     def habitacion=Habitacion.get(params.id)
     [habitacion:habitacion]
   }
-  
+
   def edit(){
     def habitacion=Habitacion.get(params.id)
     [habitacion:habitacion]
@@ -25,10 +25,10 @@ class HabitacionController {
       render view:"create"
       }else
       {
-         def h1=Hotel.getInstance()
-         h1.addToHabitaciones(habitacion)
-         h1.save()
-         render view:"index", model:[habitaciones: h1.habitaciones]
+         def hotel=Hotel.getInstance()
+         hotel.addToHabitaciones(habitacion)
+         hotel.save()
+         render view:"index", model:[habitaciones: hotel.habitaciones]
      }
  }  
 
@@ -36,8 +36,6 @@ class HabitacionController {
     def habitacion=Habitacion.get(params.id)
     habitacion.properties=params
     habitacion.save()
-    def hotel=Hotel.getInstance()
-    hotel.save()
     render view:"index", model:[habitaciones: Hotel.getInstance().habitaciones]
 }
  
