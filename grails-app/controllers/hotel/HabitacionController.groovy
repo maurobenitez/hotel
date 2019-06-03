@@ -3,20 +3,20 @@ package hotel
 class HabitacionController {
 
     def index() {
-      def habitaciones=Hotel.getInstance().habitaciones
+      def habitaciones=Hotel.getInstance().getHabitaciones()
       [habitaciones: habitaciones]
   }
 
   def create(){}
 
   def show(){
-    def habitacion=Habitacion.get(params.id)
-    [habitacion:habitacion]
+    def h=Habitacion.get(params.id)
+    [habitacion:h]
   }
 
   def edit(){
-    def habitacion=Habitacion.get(params.id)
-    [habitacion:habitacion]
+    def h=Habitacion.get(params.id)
+    [habitacion:h]
   }
 
   def save(Habitacion habitacion){
@@ -28,7 +28,7 @@ class HabitacionController {
          def hotel=Hotel.getInstance()
          hotel.addToHabitaciones(habitacion)
          hotel.save()
-         render view:"index", model:[habitaciones: hotel.habitaciones]
+         render view:"index", model:[habitaciones: hotel.getHabitaciones()]
      }
  }  
 
@@ -36,13 +36,13 @@ class HabitacionController {
     def habitacion=Habitacion.get(params.id)
     habitacion.properties=params
     habitacion.save()
-    render view:"index", model:[habitaciones: Hotel.getInstance().habitaciones]
+    render view:"index", model:[habitaciones: Hotel.getInstance().getHabitaciones()]
 }
  
  def delete(){
     def habitacion=Habitacion.get(params.id)
     habitacion.delete()
-    render view:"index", model:[habitaciones:Hotel.getInstance().habitaciones]
+    render view:"index", model:[habitaciones:Hotel.getInstance().getHabitaciones()]
  }
 
  

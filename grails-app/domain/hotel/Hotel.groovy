@@ -1,12 +1,12 @@
 package hotel
-
+@Singleton(strict=false)
 class Hotel {
 
     String nombre
     String direccion
     String foto
     String reseña
-    static Hotel hotel
+    private static hotel
     Integer cant_Habitaciones
     static hasMany=[habitaciones:Habitacion, huespedes:Huesped, reservas:Reserva]
     static constraints = {
@@ -20,7 +20,6 @@ class Hotel {
     static def getInstance(){
             if (hotel==null){
                 hotel=new Hotel()
-                hotel.save()
             }
             hotel
         }

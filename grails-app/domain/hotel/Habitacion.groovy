@@ -8,5 +8,6 @@ class Habitacion {
     static constraints = {
     	numero unique:true
     	plazas min:1
+    	hotel nullable:true
     }
 }
