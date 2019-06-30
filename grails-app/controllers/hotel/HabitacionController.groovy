@@ -25,6 +25,7 @@ class HabitacionController {
       render view:"create"
       }else
       {
+        habitacion.save()
          def hotel=Hotel.getInstance()
          hotel.addToHabitaciones(habitacion)
          hotel.save()
@@ -33,16 +34,21 @@ class HabitacionController {
  }  
 
  def update(){
+    def hotel=Hotel.getInstance()
+    hotel.save()
     def habitacion=Habitacion.get(params.id)
     habitacion.properties=params
     habitacion.save()
+    hotel.save()
     render view:"index", model:[habitaciones: Hotel.getInstance().getHabitaciones()]
 }
  
  def delete(){
-    def habitacion=Habitacion.get(params.id)
-    habitacion.delete()
-    render view:"index", model:[habitaciones:Hotel.getInstance().getHabitaciones()]
+    def hotel=Hotel.getInstance()
+    hotel.save()
+    hotel.removeFromHabitaciones(Habitacion.get(params.id))
+    hotel.save()
+    render view:"index", model:[habitaciones:hotel.getHabitaciones()]
  }
 
  

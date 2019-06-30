@@ -20,7 +20,7 @@
           </tr>
           <g:each in="${reservas}" var="reserva">
           <tr>
-             <td>${reserva.id} <g:formatDate format="dd/MM/yy" date="${reserva.fecha_inicio}"/></td>
+             <td><g:formatDate format="dd/MM/yy" date="${reserva.fecha_inicio}"/></td>
              <td><g:formatDate format="dd/MM/yy" date="${reserva.fecha_fin}"/></td>
              <td>${reserva.cant_huespedes}</td>
              <td>${reserva.estado}</td>
@@ -31,7 +31,7 @@
             <g:if test="${reserva.habitacion != null}">
                  ${reserva.habitacion.numero}
             </g:if>
-xd
+
            </td>
          </tr>
      </g:each>

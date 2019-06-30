@@ -6,8 +6,7 @@ class Huesped {
     String email
     Integer dni
     String tipo_de_dni
-    Reserva reserva
-    static belongsTo=[hotel:Hotel]
+    static belongsTo=[hotel:Hotel,reserva:Reserva]
     static constraints = {
         nombre blank:false
         apellido blank:false

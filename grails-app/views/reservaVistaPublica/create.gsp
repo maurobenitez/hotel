@@ -13,13 +13,14 @@
                 </div>
             </g:if>
         <div class="row">
-            <div class="col-sm-4"></div>
-            <div class="col-sm-4">
+            <h1>Introduzca sus datos</h1>
+            <div class="col-sm-3"></div>
                
 
-            <h1>Introduzca sus datos</h1>
+            
             <g:form action="save">
-            <div class="form-group">
+            <div class="col-sm-3">
+            <div class="form-group">  
                 <label for="nombre">Nombre</label>
                 <g:textField name="nombre" class="form-control" id="nombre"/>
             </div>
@@ -35,6 +36,8 @@
                 <label for="tipo_de_dni">Tipo de DNI</label>
                 <g:textField name="tipo_de_dni" class="form-control" id="tipo_de_dni"/>
             </div>
+            </div>
+            <div class="col-sm-3">
             <div class="form-group">
                 <label for="fecha_inicio">Desde: </label>
                 <g:textField name="fecha_inicio" class="form-control" id="fecha_inicio"/>           
@@ -54,10 +57,12 @@
             </div>
             
             <g:actionSubmit value="Reservar" action="save"/>
+        </div>
         </g:form>
 
-    </div>
-    <div class="col-sm-4"></div>
+    <div class="col-sm-3"></div>
+    <div class="col-sm-3"></div>
+
 </div>
 </div>
 

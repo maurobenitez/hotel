@@ -1,5 +1,4 @@
 package hotel
-@Singleton(strict=false)
 class Hotel {
 
     String nombre
@@ -20,6 +19,7 @@ class Hotel {
     static def getInstance(){
             if (hotel==null){
                 hotel=new Hotel()
+		hotel.save()
             }
             hotel
         }
