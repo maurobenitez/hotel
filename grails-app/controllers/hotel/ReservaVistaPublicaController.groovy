@@ -5,21 +5,19 @@ class ReservaVistaPublicaController {
     def index() { }
 
     def create(){
-        
+        [automoviles:Automovil.list()]
     }
 
     def save(Reserva reserva, Huesped huesped){
-        def hotel=Hotel.getInstance()
-        hotel.save()
+        
         if (reserva.hasErrors()){
             flash.errorReserva=true
             render view:"create"
         }
         else{
-            huesped.setReserva(reserva)
-            reserva.save()
             reserva.setHuesped(huesped)
-            huesped.save()
+            reserva.save()
+            def hotel=Hotel.getInstance()
             hotel.addToReservas(reserva)
             hotel.addToHuespedes(huesped)
             hotel.save()

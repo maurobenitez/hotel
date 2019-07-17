@@ -55,10 +55,14 @@
                 <label for="email">Email</label>
                 <g:textField name="email" class="form-control" id="email"/>
             </div>
+            <g:each in="${automoviles}" var="automovil">
+                <g:checkBox name="myCheckbox" value="${automovil.id}" />${automovil.id}
+            </g:each>
             
             <g:actionSubmit value="Reservar" action="save"/>
         </div>
         </g:form>
+        
 
     <div class="col-sm-3"></div>
     <div class="col-sm-3"></div>

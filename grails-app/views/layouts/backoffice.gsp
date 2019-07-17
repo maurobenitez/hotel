@@ -34,7 +34,8 @@
         <li><g:link controller="hotel" action="show">Hotel</g:link></li>
         <li><g:link controller="habitacion" action="index">Habitaciones</g:link></li>
         <li><g:link controller="reserva" action="index">Reservas</g:link></li>
-        <li><g:link controller="Huesped" action="index">Huespedes</g:link></li>       
+        <li><g:link controller="Huesped" action="index">Huespedes</g:link></li>   
+        <li><g:link controller="Automovil" action="index">Automoviles</g:link></li>    
       </ul>
       
       <ul class="nav navbar-nav navbar-right">

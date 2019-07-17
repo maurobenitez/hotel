@@ -9,8 +9,10 @@ class Reserva {
     Date fecha_fin
     Integer cant_huespedes
     Habitacion habitacion
+    Huesped huesped
+    ReservaAutomovil reservaAutomovil
+
     static belongsTo=[hotel:Hotel]
-    static hasOne=[huesped:Huesped]
 
     static constraints = {
         estado nullable:true
@@ -19,6 +21,7 @@ class Reserva {
         cant_huespedes min:1
         habitacion nullable:true
         huesped nullable:true, unique:true
+        reservaAutomovil nullable:true, unique:true
         hotel nullable:true
     }
     

@@ -17,7 +17,7 @@
           </tr>
           <g:each in="${huespedes}" var="huesped">
           <tr>
-             <td>${huesped.id} ${huesped.nombre} ${huesped.apellido}</td>
+             <td>${huesped.nombre} ${huesped.apellido}</td>
              <td>${huesped.dni}</td>
              <td>${huesped.tipo_de_dni}</td>
              <td>${huesped.email}</td>

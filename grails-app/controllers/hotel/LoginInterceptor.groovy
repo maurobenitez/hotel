@@ -8,6 +8,7 @@ class LoginInterceptor {
         match(controller:'hotel')
         match(controller:'huesped')
         match(controller:'reserva')
+        match(controller:'automovil')
 	}
     boolean before() { 
     	if (!session.logueado) 
