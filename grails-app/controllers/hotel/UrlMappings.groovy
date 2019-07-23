@@ -8,8 +8,7 @@ class UrlMappings {
                 // apply constraints here
             }
         }
-	"/"(controller: "hotelVistaPublica", action: "index")
-       // "/"(view:"/index")
+        "/"(controller: "hotelVistaPublica", action: "index")
         "500"(view:'/error')
         "404"(view:'/notFound')
     }

@@ -18,6 +18,7 @@
                 optionValue="numero">                        
             </g:select> 
             <g:submitButton name="asignar habitación" value="asignar habitación"/>
+            ${reserva.reservaAutomovil.automovil.modelo}
         </g:form>
         <div class="col-sm-4"></div>
     </div>
