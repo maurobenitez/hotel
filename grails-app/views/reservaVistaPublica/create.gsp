@@ -52,10 +52,17 @@
                 <label for="email">Email</label>
                 <g:textField name="email" class="form-control" id="email"/>
             </div>
+            <h1>Autos</h1>
             <g:each in="${automoviles}" var="automovil">
-                <g:checkBox name="automovil" value="${automovil.id}"checked="false" />${automovil.id}
+                <div class="thumbnail">
+                    <img src="${automovil.foto}" alt="${automovil.modelo}" style="width:100%">
+                    <div class="caption">
+                        <g:checkBox name="automovil" value="${automovil.id}"checked="false" />
+                        ${automovil.modelo}
+                    </div>
+                </div>
             </g:each>
-            
+            <br>
             <g:actionSubmit value="Reservar" action="save"/>
         </div>
         </g:form>

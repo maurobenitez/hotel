@@ -16,6 +16,7 @@
               <th>Huesped</th>
               <th>Asignar</th>
               <th>Habitacion</th>
+              <th>Automovil</th>
               <th></th>
           </tr>
           <g:each in="${reservas}" var="reserva">
@@ -30,6 +31,11 @@
              <td>
             <g:if test="${reserva.habitacion != null}">
                  ${reserva.habitacion.numero}
+            </g:if>
+            </td>
+            <td>
+            <g:if test="${reserva.reservaAutomovil.automovil != null}">
+                 ${reserva.reservaAutomovil.automovil.modelo}
             </g:if>
 
            </td>

@@ -12,7 +12,7 @@ class Reserva {
     Huesped huesped
     ReservaAutomovil reservaAutomovil
 
-    static belongsTo=[hotel:Hotel]
+    static belongsTo=[hotel:Hotel, habitacion:Habitacion]
 
     static constraints = {
         estado nullable:true

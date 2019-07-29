@@ -16,6 +16,7 @@ class ReservaVistaPublicaController {
         else{
             def automovil=Automovil.get(params.automovil)
             def reservaAutomovil=new ReservaAutomovil(automovil:automovil, fecha_inicio:reserva.fecha_inicio, fecha_fin: reserva.fecha_fin)
+            reservaAutomovil.save()
             reserva.setHuesped(huesped)
             reserva.setReservaAutomovil(reservaAutomovil)
             reserva.save()

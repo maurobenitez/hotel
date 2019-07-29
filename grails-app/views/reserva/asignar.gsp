@@ -16,9 +16,14 @@
                 noSelection="['':'Elija una habitación']"
                 optionKey="id"
                 optionValue="numero">                        
-            </g:select> 
+            </g:select>
+            <g:if test="${reserva.reservaAutomovil.automovil != null}">
+                <br><g:checkBox name="automovil" value="${automovil.id}"checked="false" />
+                Confirmar reserva de ${reserva.reservaAutomovil.automovil.modelo}
+            </g:if>
+            <br>
             <g:submitButton name="asignar habitación" value="asignar habitación"/>
-            ${reserva.reservaAutomovil.automovil.modelo}
+            
         </g:form>
         <div class="col-sm-4"></div>
     </div>
