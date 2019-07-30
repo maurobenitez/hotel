@@ -35,7 +35,7 @@
           <div class="py-1">
             <div class="row align-items-center">
               <div class="col-2">
-                <h2 class="mb-0 site-logo"><g:link controller="reservaVistaPublica" action="index">${hotel.nombre}</g:link></h2>
+                <h2 class="mb-0 site-logo"><a href="index.html">Hotel</a></h2>
               </div>
               <div class="col-10">
                 <nav class="site-navigation text-right" role="navigation">
@@ -61,8 +61,8 @@
           <div class="row align-items-center justify-content-center">
             <div class="col-md-7 text-center" data-aos="fade">
               
-              <h1 class="mb-2">Bienvenido al hotel ${hotel.nombre}</h1>
-              <h2 class="caption">${hotel.direccion}</h2>
+              <h1 class="mb-2">Welcome To Suites</h1>
+              <h2 class="caption">Hotel &amp; Resort</h2>
             </div>
           </div>
         </div>
@@ -81,8 +81,6 @@
             Copyright &copy; <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All Rights Reserved | This template is made with <i class="icon-heart text-primary" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
-            <g:link controller="hotel" action="show">ingresar</g:link>
-
           </div>
         </div>
       </div>

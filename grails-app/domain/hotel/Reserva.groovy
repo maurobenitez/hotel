@@ -8,7 +8,6 @@ class Reserva {
     @BindingFormat('dd/MM/yyyy')
     Date fecha_fin
     Integer cant_huespedes
-    Habitacion habitacion
     Huesped huesped
     ReservaAutomovil reservaAutomovil
 

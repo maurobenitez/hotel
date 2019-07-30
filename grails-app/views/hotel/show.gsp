@@ -21,8 +21,8 @@
             <p><b>Nombre:</b> ${hotel.nombre}</p>
             <p><b>Dirección: </b>${hotel.direccion}</p>
             <p><b>Reseña: </b>${hotel.reseña}</p>
-            <p><b>Foto: </b>${hotel.foto}</p>
-
+            <p><b>Foto: </b></p>
+            <img class="img-responsive img-thumbnail" src="${hotel.foto}" alt="${hotel.nombre}"> 
             <g:link action="edit" class="btn btn-default">editar</g:link>
 
         </div>

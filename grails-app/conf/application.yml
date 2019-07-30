@@ -1,5 +1,16 @@
 ---
 grails:
+    mail:
+        host: "smtp.gmail.com"
+        port: 465
+        username: "hotel5584@gmail.com"
+        password: "7492620479"
+        props:
+            mail.transport.protocol: "smtps"
+            mail.smtps.host: "smtp.gmail.com"
+            mail.smtps.port: "465"
+            mail.smtps.auth: "true"
+            mail.smtp.auth: "true"
     profile: web
     codegen:
         defaultPackage: hotel

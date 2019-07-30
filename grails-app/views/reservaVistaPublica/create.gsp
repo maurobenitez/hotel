@@ -14,9 +14,9 @@
             </g:if>
         <div class="row">
             <h1>Introduzca sus datos</h1>
-            <div class="col-sm-3"></div>       
+            <div class="col"></div>       
             <g:form action="save">
-            <div class="col-sm-3">
+            <div class="col">
             <div class="form-group">  
                 <label for="nombre">Nombre</label>
                 <g:textField name="nombre" class="form-control" id="nombre"/>
@@ -34,7 +34,7 @@
                 <g:textField name="tipo_de_dni" class="form-control" id="tipo_de_dni"/>
             </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col">
             <div class="form-group">
                 <label for="fecha_inicio">Desde: </label>
                 <g:textField name="fecha_inicio" class="form-control" id="fecha_inicio"/>           
@@ -54,11 +54,11 @@
             </div>
             <h1>Autos</h1>
             <g:each in="${automoviles}" var="automovil">
-                <div class="thumbnail">
+                <div class="img-thumbnail">
                     <img src="${automovil.foto}" alt="${automovil.modelo}" style="width:100%">
                     <div class="caption">
                         <g:checkBox name="automovil" value="${automovil.id}"checked="false" />
-                        ${automovil.modelo}
+                        <h5>${automovil.modelo}</h5>
                     </div>
                 </div>
             </g:each>
@@ -66,8 +66,8 @@
             <g:actionSubmit value="Reservar" action="save"/>
         </div>
         </g:form>
-    <div class="col-sm-3"></div>
-    <div class="col-sm-3"></div>
+    <div class="col"></div>
+    <div class="col"></div>
 </div>
 </div>
 </body>
