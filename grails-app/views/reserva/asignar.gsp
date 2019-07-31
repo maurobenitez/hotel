@@ -30,7 +30,7 @@
             </g:else>
             <br>
             <g:submitButton name="asignar habitación" value="asignar habitación"/>
-            
+            <g:link action="cancelar" id="${reserva.id}">cancelar reserva</g:link>
         </g:form>
         <div class="col-sm-4"></div>
     </div>

@@ -25,7 +25,7 @@ class ReservaController {
         def autosDisponibles=ReservaAutomovil.findAll{
             (fecha_inicio>=reserva1.fecha_inicio)&&(fecha_inicio<=reserva1.fecha_fin)&&(automovil==automovil1)&&(estado=="asignado")
         }
-        if (autosDisponibles!=null){
+        if (autosDisponibles!=null && automovil1!=null){
             if (automovil1.cantidad-autosDisponibles.size()==0){
                 flash.noAutosDisponibles=true
             }
@@ -52,6 +52,20 @@ class ReservaController {
             mensaje=mensaje+"El ${automovil.modelo} que solicitó no pudo ser reservado. "
         }
         mensaje=mensaje+"Gracias por hospedarse en nuestro hotel."
+        sendMail {
+            to reserva.huesped.email
+            subject "Reserva de hotel"
+            text mensaje
+        }
+        render view:"index",model:[reservas:Hotel.getInstance().getReservas()]
+    }
+    def cancelar(){
+        def hotel=Hotel.getInstance()
+        hotel.save()
+        def reserva=Reserva.get(params.id)
+        def mensaje="Estimado cliente, lamentamos informarle que no quedan habitaciones disponibles."
+        reserva.setEstado("rechazado")
+        reserva.save()
         sendMail {
             to reserva.huesped.email
             subject "Reserva de hotel"
